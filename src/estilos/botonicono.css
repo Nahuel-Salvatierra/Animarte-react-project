@@ -1,0 +1,17 @@
+.contenedor-icono {
+    color: white;
+    width: 50px;
+    height: auto;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-icono:hover {
+    color:gold;
+}
