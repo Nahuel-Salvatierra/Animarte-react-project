@@ -1,6 +1,8 @@
+import '../estilos/inputserch.css'
+
 function InputBuscar (prop) {
     return (
-        <input Type='text' placeholder="Buscar...">
+        <input  className='inputserch' Type='text' placeholder="Buscar...">
             
         </input>
     )
