@@ -24,9 +24,8 @@ function NavBar() {
                             <li class="desplegable">
                                 <button class="dropbtn">PRODUCTOS</button>
                                 <div class="desplegable-content">
-                                    <a href="#">Opción 1</a>
-                                    <a href="#">Opción 2</a>
-                                    <a href="#">Opción 3</a>
+                                    <a href="#">CUADERNOS</a>
+                                    <a href="#">REMERAS</a>
                                 </div>
                             </li>
                         </ul>

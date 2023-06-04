@@ -1,0 +1,13 @@
+* {
+    margin:0;
+    padding:0;
+    text-decoration: none;
+}
+a {
+    color: inherit !important;
+    text-decoration: none !important
+}
+.contenedor {
+    display: flex;
+    gap: 10px;
+  }

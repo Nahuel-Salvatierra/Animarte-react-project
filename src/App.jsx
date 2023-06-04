@@ -1,7 +1,8 @@
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './App.css'
-import BotonIcono from './Componentes/BotonIcono'
 import NavBar from './Componentes/NavBar'
+import CardProduct from './Componentes/cardProduct'
+import Carrito from './Componentes/carritoCompras'
 
 
 function App() {
@@ -11,8 +12,12 @@ function App() {
       <NavBar />
       <body>
         <div className="container">
-          <div className="row">
-            <div className="col">
+          <div className="row d-flex justify-content-center">
+            <div className='col-md-12 col-lg-9 col-9'>
+              <CardProduct />
+            </div>
+            <div className='d-none d-lg-block col-md-3'>
+              <Carrito />
             </div>
           </div>
         </div>
