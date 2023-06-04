@@ -1,11 +1,11 @@
 const mysql = require('mysql');
-require('dorenv').config({path:'../env'})
+require('dotenv').config()
 
 const mysqlConnection = mysql.createConnection({
-    hdatabase: '',
-    user: '',
-    host: '',
-    password: '',
+    hdatabase: process.env.HDATABASE,
+    user: process.env.USER,
+    host: process.env.HOST,
+    password: process.env.PASSWORD,
     ssl: {
         rejectUnauthorized: false
     }
