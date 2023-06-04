@@ -13,5 +13,5 @@ a{
 }
 
 .contenedor-icono:hover {
-    color:gold;
+    scale: 1.1;
 }

@@ -1,0 +1,5 @@
+.espacio-lateral {
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+}
