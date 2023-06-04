@@ -1,10 +1,11 @@
 const mysql = require('mysql');
+require('dotenv').config()
 
 const mysqlConnection = mysql.createConnection({
-    hdatabase: 'nahuel-database',
-    user: 'yqh8tg9tux6urokqp9ey',
-    host: 'aws.connect.psdb.cloud',
-    password: 'pscale_pw_jXIBw6Dnq2gWzFJY7KaTzQpExrloitNTIesCgnG19gx',
+    hdatabase: process.env.HDATABASE,
+    user: process.env.USER,
+    host: process.env.HOST,
+    password: process.env.PASSWORD,
     ssl: {
         rejectUnauthorized: false
     }
