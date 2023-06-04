@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
+/Animarte-react-proyect/Animarte-back-end/.env
 
 # Editor directories and files
 .vscode/*
