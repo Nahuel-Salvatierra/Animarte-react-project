@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../estilos/cardProduct.css'
+import '../estilos/CardProduct.css'
 
 const CardProduct = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/');
+        const response = await axios.get(`http://localhost:5000/`);
         setData(response.data);
       } catch (error) {
         console.log(error);
@@ -28,7 +28,7 @@ const CardProduct = () => {
               Modelo: <br></br>
               {objeto.modelo}
               </p>
-            <div href="#" className="btn btn-primary espacio-lateral"><i class="bi bi-cart3"></i>Añadir</div>
+            <div href="#" className="btn btn-primary espacio-lateral"><i class="bi bi-cart3"></i> $1.800</div>
           </div>
         </div>
       ))}
