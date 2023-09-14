@@ -1,0 +1,19 @@
+.btnGoogle {
+    display: flex;
+    align-items: center;
+}
+
+.btnGoogle:hover {
+    background-color: blueviolet;
+    transform: scale(1.05);
+    box-shadow: 2px 5px 10px rgba(220, 53, 69, 0.9);
+}
+
+.iconBtnGoogle {
+    margin-left: 40px;
+}
+
+.textoBtnGoogle {
+    flex: 1;
+    margin-right: 24px;
+}
