@@ -28,7 +28,7 @@ const CardProduct = () => {
               Modelo: <br></br>
               {objeto.modelo}
               </p>
-            <div href="#" className="btn btn-primary espacio-lateral"><i class="bi bi-cart3"></i>Añadir</div>
+            <div href="#" className="btn btn-primary espacio-lateral"><i className="bi bi-cart3"></i>Añadir</div>
           </div>
         </div>
       ))}
