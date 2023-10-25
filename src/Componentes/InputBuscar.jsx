@@ -2,7 +2,7 @@ import '../estilos/inputserch.css'
 
 function InputBuscar (prop) {
     return (
-        <input  className='inputserch' Type='text' placeholder="Buscar...">
+        <input  className='inputserch' type='text' placeholder="Buscar...">
             
         </input>
     )
