@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { crearProductos } from "./../api/productos.API";
+import { createProducts } from "./../api/productos.API";
 import { handleSubmitError } from "./../api/handleErrors";
 
 export default function ProductForm() {
     const queryClient = useQueryClient();
     const addProductMutation = useMutation({
-        mutationFn: crearProductos,
+        mutationFn: createProducts,
         onSuccess: () => {
             queryClient.invalidateQueries("products");
         },
@@ -45,7 +45,7 @@ export default function ProductForm() {
                     <textarea
                         className="form-control "
                         placeholder="Leave a comment here"
-                        id="floatingTextarea2"
+                        id="description"
                     ></textarea>
                 </div>
 
