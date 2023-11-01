@@ -1,44 +1,29 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './App.css';
-import NavBar from './Componentes/NavBar';
-// import CardProduct from './Componentes/cardProduct';
-// import IniciarSesion from './pages/iniciarSesion/IniciarSesion';
-import { useAuth } from './context/userContext';                  //Obtenemos para acceder al estado "userRole"
-import CrearProductos from './pages/crearProductos/crearProductos';
-
-
-
-
-
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./Componentes/NavBar";
+import Login from "./Componentes/Login";
 
 function App() {
-    const { userRole } = useAuth();                                 //Obtenemos el valor actual del usuario.
-    console.log('Nuevo userRole después del inicio de sesión:', userRole);
-    
-
-    return (
-        <div>
-            
-            <NavBar />
-            <CrearProductos/>
-            {/* <div className="">
-                <div className="row d-flex justify-content-center">
-                    <div className='col-md-12 col-lg-9 col-9'>
-                        <CardProduct />
-                    </div>
-                    <div className='d-none d-lg-block col-md-3 '>
-                        <Carrito />
-                    </div>
-                </div>
-            </div> */}
-
-            <footer>
-            </footer>
-        </div>
-    )
+	return (
+		<>
+            <header>
+                <NavBar></NavBar>
+            </header>
+			<Routes>
+				<Route path="/" element={<></>}>
+					{/* public routes */}
+					<Route path="login" element={<Login />} />
+					{/* <Route path="register" element={<Register />} />
+				<Route path="linkpage" element={<LinkPage />} />
+				<Route path="unauthorized" element={<Unauthorized />} /> */}
+				</Route>
+			</Routes>
+		</>
+	);
 }
 
-export default App
+export default App;

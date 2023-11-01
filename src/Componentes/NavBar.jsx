@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputBuscar from "./InputBuscar";
-import IniciarSesion from "../pages/iniciarSesion/IniciarSesion";
 import "../estilos/navbar.css";
+import OffCanvas from "./OffCanvas";
 
 function NavBar() {
     const [productoActivo, setProductoActivo] = useState(null);
@@ -67,10 +67,8 @@ function NavBar() {
                     <div role="search" className="me-3">
                         <InputBuscar />
                     </div>
-                    <div>
-                        <IniciarSesion />
-                    </div>
                 </div>
+                <OffCanvas/>
             </div>
         </nav>
     );

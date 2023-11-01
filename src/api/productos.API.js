@@ -1,10 +1,6 @@
-import axios from 'axios'
+import axios from './config.axios';
 
-export const productAPI = axios.create({
-    baseURL: 'http://localhost:3000'
-})
-
-export function crearProductos(){
-    const res = productAPI.post('/product')
+export function createProducts() {
+    const res = axios.post('/product')
     return res.data;
 }
