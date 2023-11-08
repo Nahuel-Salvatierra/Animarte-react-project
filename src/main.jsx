@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import { AuthProvider } from "./context/userContext.jsx";
+import { AuthProvider } from "./context/AuthProvider.jsx";
 
 const root = document.getElementById("root");
 const rootElement = createRoot(root);

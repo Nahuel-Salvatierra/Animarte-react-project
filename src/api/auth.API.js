@@ -5,11 +5,6 @@ export function createProducts() {
     return res.data;
 }
 
-export async function signUp() {
-    const res = await axios.post('/auth/signup')
-    return res.data
-}
-
 export async function login(data) {
     const dataSend = JSON.stringify(data)
     const res = await axios.post('/auth/login', dataSend,
@@ -19,5 +14,19 @@ export async function login(data) {
     )
     return res.data
 }
+
+export async function signUp(data) {
+    const dataSend = JSON.stringify(data)
+    const res = await axios.post('/auth/signup', dataSend,
+        {
+            headers: { 'Content-Type': 'application/json' },
+        })
+
+    return res.data
+}
+
+export async function getRefreshToken(){
+    return await axios.get('auth/refresh',);
+} 
 
 

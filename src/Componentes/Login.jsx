@@ -1,43 +1,49 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../context/userContext";
 import "./InputIniciarSesion.css";
 import { handleLoginError } from "../handleError/login.error";
 import { login } from "../api/auth.API";
+import useAuth from "./../hooks/useAuth";
+import jwtDecode from "jwt-decode";
 
 function Login() {
 	const { setAuth } = useAuth();
 
-	const [user, setUser] = useState("");
-	const [pwd, setPwd] = useState("");
+	const [form, setForm] = useState({ email: "", password: "" });
+
+	const [isLoading, setIsLoadin] = useState(false);
+
 	const [errMsj, setErrMsj] = useState("");
 
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname ?? "/";
-
-	const userRef = useRef(user);
+	const userRef = useRef(form.email);
 	const errRef = useRef();
 
 	// useEffect(() => {
 	// 	userRef.current.focus();
 	// }, []);
 
+	const handleChange = (e) => {
+		setForm({
+			...form,
+			[e.target.name]: e.target.value,
+		});
+	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const formData = new FormData(e.target);
-		const userData = Object.fromEntries(formData);
-		console.log(userData)
 		try {
-			const response = await login(userData);
-			console.lop(userData)
+			const response = await login(form);
 			const accessToken = response.accessToken;
-			setAuth({ use: user, pwd, roles, accessToken });
-			setUser("");
-			setPwd("");
-			navigate(from, { replace: true });
+			const { role } = jwtDecode(accessToken);
+			console.log(role , accessToken);
+
+			setAuth({ role:[role] , token:accessToken });
+			navigate( '/dashboard', { replace: true });
 		} catch (err) {
-			setErrMsj(handleLoginError(err));
+			console.log(err);
 			// errRef.current.focus();
 		}
 	};
@@ -49,8 +55,7 @@ function Login() {
 					name="email"
 					type="email"
 					placeholder="name@example.com"
-					value={user}
-					onChange={(e) => setUser(e.target.value)}
+					onChange={handleChange}
 					onBlur={() => "email"}
 				/>
 				<label htmlFor="email">Dirección de email</label>
@@ -63,10 +68,9 @@ function Login() {
 				<input
 					className="form-control"
 					name="password"
-					type="password"
+					type="text"
 					placeholder="Contraseña"
-					value={pwd}
-					onChange={(e) => setPwd(e.target.value)}
+					onChange={handleChange}
 					onBlur={() => "password"}
 				/>
 				<label htmlFor="password">Contraseña</label>

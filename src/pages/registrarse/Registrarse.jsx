@@ -1,5 +1,5 @@
 import React from 'react';
-import InputsRegistrarse from './componentes/InputsRegistrarse';
+import InputsRegistrarse from '../registrarse/componentes/registrarse'
 
 function Registrarse() {
     
